@@ -42,6 +42,13 @@ open $CONFIG/ayu-mirage.itermcolors
 open $CONFIG/nord.itermcolors
 open $CONFIG/nord.terminal
 
+# Install PowerLevel10k
+brew install romkatv/powerlevel10k/powerlevel10k
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+sudo rm -rf ~/.p10k.zsh > /dev/null 2>&1
+cp $CONFIG/.p10k.zsh ~/.p10k.zsh
+
+
 # Install Visual Studio Code plugins [1/2]
 printf "⚙️ Put Visual Studio Code in quarantine to install plugins...\n"
 xattr -dr com.apple.quarantine /Applications/Visual\ Studio\ Code.app
@@ -63,7 +70,9 @@ code --install-extension yzhang.markdown-all-in-one
 # Update Visual Studio Code settings [2/2]
 printf "⚙️ Update Visual Studio Code settings...\n"
 sudo rm -rf ~/Library/Application\ Support/Code/User/settings.json > /dev/null 2>&1
+sudo rm -rf ~/Library/Application\ Support/Code/User/keybindings.json > /dev/null 2>&1
 cp $CONFIG/settings.json ~/Library/Application\ Support/Code/User/settings.json
+cp $CONFIG/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # Update Git settings [1/1]
 printf "⚙️ Update Git settings...\n"
@@ -93,8 +102,8 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 # Configure macOS Safari

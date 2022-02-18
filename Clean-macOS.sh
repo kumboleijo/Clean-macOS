@@ -4,9 +4,11 @@
 # Set variables                                                               #
 ###############################################################################
 
-BIN=~/Clean-macOS/bin                # shell scripts
-CONFIG=~/Clean-macOS/config          # configuration files directory
-SETUP=~/Clean-macOS                  # root folder of Clean-macOS
+SCRIPT_PATH=$(dirname "$0")
+
+BIN=$SCRIPT_PATH/bin                # shell scripts
+CONFIG=$SCRIPT_PATH/config          # configuration files directory
+SETUP=$SCRIPT_PATH                  # root folder of Clean-macOS
 
 ###############################################################################
 # Menu                                                                        #

@@ -35,17 +35,19 @@ if test ! $(which brew); then
     brew install mas
   # Check Brews
     brew -v update && brew -v upgrade && mas upgrade && brew -v cleanup --prune=2 && brew doctor
-  # Install Homebrew apps
-    printf "📦 Installing Apps...\n"
-    brew bundle --file=$SETUP/Brewfile
-  # Cleanup
-    printf "⚙️ Cleanup and final touches...\n"
-    brew -v update && brew -v upgrade && mas upgrade && brew -v cleanup --prune=2 && brew doctor && brew -v upgrade --casks --greedy 
 else
     printf "📦 Homebrew is already installed...\n"
-    exit
-
 fi
+
+# Install Homebrew apps
+printf "📦 Installing Apps ands Tools...\n"
+# install/brew/_install.sh
+# install/curl/_install.sh
+install/vscode/_install.sh
+
+# Cleanup
+printf "⚙️ Cleanup and final touches...\n"
+brew -v update && brew -v upgrade && mas upgrade && brew -v cleanup --prune=2 && brew doctor && brew -v upgrade --casks --greedy 
 
 # Exit script
 exit

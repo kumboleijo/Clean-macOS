@@ -1,0 +1,88 @@
+{
+  "workbench.colorTheme": "Atomize",
+  "workbench.colorCustomizations": {},
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "git.autofetch": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.detectIndentation": false,
+  "editor.codeLens": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "python.jediEnabled": false,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxSingleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "git.confirmSync": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sync.gist": "08a92499c352095952c9796ac07d34e0",
+  "sync.autoDownload": true,
+  "markdown-pdf.displayHeaderFooter": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "extensions.ignoreRecommendations": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.useEditorConfig": false,
+  "docker.containers.label": "Ports",
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.languageServer": "Default",
+  "tabnine.experimentalAutoImports": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "gitlens.advanced.messages": {
+    "suppressImproperWorkspaceCasingWarning": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "markdown-preview-enhanced.scrollSync": false,
+  "vetur.validation.script": false,
+  "editor.foldingStrategy": "indentation",
+  "tslint.run": "onSave",
+  "tslint.typeCheck": true,
+  "vetur.validation.templateProps": true,
+  "protoc": {
+    "path": "/usr/local/bin/protoc",
+    "compile_on_save": false,
+    "options": [
+      "--proto_path=/Users/joschmitt/Documents/Notes/proto",
+      "--java_out=/Users/joschmitt/Documents/Notes/proto/out/java",
+      "--js_out=/Users/joschmitt/Documents/Notes/proto/out/js"
+    ]
+  },
+  "workbench.startupEditor": "none",
+  "editor.accessibilitySupport": "off"
+}
