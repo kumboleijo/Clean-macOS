@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -82,7 +82,7 @@ plugins=(battery git node docker aliases alias-finder)
 
 source $ZSH/oh-my-zsh.sh
 
-SCRIPTS_PATH="~/.bashmania"
+SCRIPTS_PATH=~/.bashmania
 
 # # edit and source .zshrc
 alias update="${SCRIPTS_PATH}/update.sh"
@@ -90,7 +90,7 @@ alias ez="code ${SCRIPTS_PATH} && code ~/.zshrc && code ${SCRIPTS_PATH}/.bash_al
 alias sz="source ~/.zshrc && update"
 
 for FILE in $(find ${SCRIPTS_PATH}/aliases); do
-  source $FILE
+    source $FILE
 done
 source "${SCRIPTS_PATH}/aliases/_private.env"
 
@@ -117,10 +117,8 @@ source "${SCRIPTS_PATH}/aliases/_private.env"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
