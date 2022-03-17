@@ -8,3 +8,7 @@
     email = jonas.schmitt@me.com
 [core]
     excludesfile = ~/.gitignore
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

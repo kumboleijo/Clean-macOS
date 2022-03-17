@@ -86,7 +86,7 @@ SCRIPTS_PATH=~/.bashmania
 
 # # edit and source .zshrc
 alias update="${SCRIPTS_PATH}/update.sh"
-alias ez="code ${SCRIPTS_PATH} && code ~/.zshrc && code ${SCRIPTS_PATH}/.bash_aliases"
+alias ez="code ${SCRIPTS_PATH} && code ~/.zshrc"
 alias sz="source ~/.zshrc && update"
 
 for FILE in $(find ${SCRIPTS_PATH}/aliases); do
@@ -122,3 +122,6 @@ source "${SCRIPTS_PATH}/aliases/_private.env"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
