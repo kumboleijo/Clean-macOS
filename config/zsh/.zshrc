@@ -83,9 +83,11 @@ plugins=(battery git node docker aliases alias-finder)
 source $ZSH/oh-my-zsh.sh
 
 SCRIPTS_PATH=~/.bashmania
+CONFIG_PATH=~/Clean-macOS
 
 # # edit and source .zshrc
 alias update="${SCRIPTS_PATH}/update.sh"
+alias config="code ${CONFIG_PATH}"
 alias ez="code ${SCRIPTS_PATH} && code ~/.zshrc"
 alias sz="source ~/.zshrc && update"
 
