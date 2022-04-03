@@ -1,13 +1,13 @@
 [filter "lfs"]
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [user]
-    name = Jonas Schmitt
-    email = jonas.schmitt@me.com
+  name = Jonas Schmitt
+  email = jonas.schmitt@me.com
 [core]
-    excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [pull]
 	rebase = true
 [rebase]

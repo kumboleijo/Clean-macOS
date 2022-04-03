@@ -127,3 +127,6 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Set Git language to English
+alias git='LANG=en_GB git'
