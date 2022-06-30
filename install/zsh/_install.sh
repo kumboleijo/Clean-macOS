@@ -1,4 +1,3 @@
-
 # Install Oh-My-Zsh [1/4]
 printf "📦 Install Zsh...\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

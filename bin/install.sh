@@ -3,13 +3,14 @@
 ###############################################################################
 # Set variables                                                               #
 ###############################################################################
+CURRENT_PATH=$(dirname "$0")
+BASE_PATH=$(dirname "$CURRENT_PATH")
 
-BIN=~/Clean-macOS/bin                # shell scripts
-CONFIG=~/Clean-macOS/config          # configuration files directory
-SETUP=~/Clean-macOS                  # root folder of Clean-macOS
+ROOT=$BASE_PATH                   # root folder of Clean-macOS
+BIN=$BASE_PATH/bin                # shell scripts
 
 ###############################################################################
-# Install                                                                     #
+# Configure                                                                   #
 ###############################################################################
 
 # Entering as Root
@@ -20,13 +21,13 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Brew
-printf "⚙️ Check Brew...\n"
+printf "⚙️  Check Brew...\n"
 if test ! $(which brew); then
   # Install Homebrew
     printf "📦 Installing XCode CL tools...\n"
     xcode-select --install
     printf "📦 Installing Homebrew...\n"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/$ROOT/install/master/install)"
   # Change permissions
     brew -v
     sudo chown -R $USER /usr/local/Cellar
@@ -39,15 +40,30 @@ else
     printf "📦 Homebrew is already installed...\n"
 fi
 
-# Install Homebrew apps
+# Install Apps and Tools
 printf "📦 Installing Apps ands Tools...\n"
-# install/brew/_install.sh
-# install/curl/_install.sh
-install/vscode/_install.sh
+
+printf "📦 Brew...\n"
+$ROOT/install/brew/_install.sh
+
+printf "📦 Curl...\n"
+$ROOT/install/curl/_install.sh
+
+printf "📦 Helm...\n"
+$ROOT/install/helm/_install.sh
+
+printf "📦 VSCode...\n"
+$ROOT/install/vscode/_install.sh
+
+printf "📦 ZSH...\n"
+$ROOT/install/zsh/_install.sh
+
+printf "📦 iTerm...\n"
+$ROOT/install/iterm/_install.sh
 
 # Cleanup
 printf "⚙️ Cleanup and final touches...\n"
-brew -v update && brew -v upgrade && mas upgrade && brew -v cleanup --prune=2 && brew doctor && brew -v upgrade --casks --greedy 
+brew -v update && brew -v upgrade && brew upgrade --cask && mas upgrade && brew -v cleanup --prune=2 && brew doctor
 
 # Exit script
 exit

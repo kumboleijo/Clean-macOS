@@ -19,6 +19,8 @@ sudo -v
 # Keep alive Root
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+exit
+
 # Update Visual Studio Code settings
 printf "⚙️ Update Visual Studio Code settings...\n"
 sudo rm -rf ~/Library/Application\ Support/Code/User/settings.json > /dev/null 2>&1

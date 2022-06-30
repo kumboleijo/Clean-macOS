@@ -82,26 +82,28 @@ plugins=(battery git node docker aliases alias-finder)
 
 source $ZSH/oh-my-zsh.sh
 
-SCRIPTS_PATH=~/.bashmania
+BASHMANIA_PATH=~/.bashmania
 CONFIG_PATH=~/Clean-macOS
 
-# # edit and source .zshrc
-alias update="${SCRIPTS_PATH}/update.sh"
-alias config="code ${CONFIG_PATH}"
-alias ez="code ${SCRIPTS_PATH} && code ~/.zshrc"
-alias sz="source ~/.zshrc && update"
+# edit and source .zshrc
+alias econfig="code ${CONFIG_PATH}"
+alias iconfig="${CONFIG_PATH}/bin/install.sh"
+alias cconfig="${CONFIG_PATH}/bin/config.sh"
 
-for FILE in $(find ${SCRIPTS_PATH}/aliases); do
+alias ez="code ${BASHMANIA_PATH} && code ~/.zshrc"
+alias sz="source ~/.zshrc"
+
+for FILE in $(find ${BASHMANIA_PATH}/aliases); do
     source $FILE
 done
-source "${SCRIPTS_PATH}/aliases/_private.env"
+source "${BASHMANIA_PATH}/aliases/_private.env"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -128,5 +130,7 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export PATH="/usr/local/sbin:$PATH"
+
 # Set Git language to English
-alias git='LANG=en_GB git'
+# alias git='LANG=en_GB git'
