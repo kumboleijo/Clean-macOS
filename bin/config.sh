@@ -23,6 +23,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Configure System, Apps and Tools
 printf "📦 Configure System, Apps ands Tools...\n"
 
+printf "📦 SSH...\n"
+$ROOT/config/ssh/_config.sh
+
 printf "🍏 macOS...\n"
 $ROOT/config/macOS/_config.sh
 
